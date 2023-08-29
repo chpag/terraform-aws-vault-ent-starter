@@ -39,7 +39,7 @@ resource "aws_s3_bucket_public_access_block" "vault_license_bucket" {
 resource "aws_s3_bucket_object" "vault_license" {
   bucket = aws_s3_bucket.vault_license_bucket.id
   key    = var.vault_license_name
-  source = var.vault_license_filepath
+  source = var.vault_license_content
 
   tags = var.common_tags
 }
