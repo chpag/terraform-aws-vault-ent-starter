@@ -7,7 +7,6 @@
 
 resource "aws_s3_bucket" "vault_license_bucket" {
   bucket_prefix = "${var.resource_name_prefix}-vault-license"
-  acl           = "private"
 
   versioning {
     enabled = true
