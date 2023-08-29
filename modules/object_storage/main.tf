@@ -31,6 +31,7 @@ resource "aws_s3_bucket_versioning" "vault_license_bucket_versioning" {
   bucket = aws_s3_bucket.vault_license_bucket.id
   versioning_configuration {
     status = "Enabled"
+  }
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "vault_license_bucket_enc_config" {
