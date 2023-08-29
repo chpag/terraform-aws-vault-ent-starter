@@ -33,11 +33,17 @@ resource "aws_s3_bucket_ownership_controls" "vault_license_bucket_own_ctrl" {
   }
 }
 
-resource "aws_s3_bucket_acl" "example" {
+resource "aws_s3_bucket_acl" "vault_license_bucket_acl" {
   depends_on = [aws_s3_bucket_ownership_controls.vault_license_bucket_own_ctrl]
 
   bucket = aws_s3_bucket.vault_license_bucket.id
   acl    = "private"
+}
+
+resource "aws_s3_bucket_versioning" "vault_license_bucket_versioning" {
+  bucket = aws_s3_bucket.vault_license_bucket.id
+  versioning_configuration {
+    status = "Disabled"
 }
 
 resource "aws_s3_bucket_public_access_block" "vault_license_bucket" {
