@@ -27,6 +27,20 @@ resource "aws_s3_bucket" "vault_license_bucket" {
   tags = var.common_tags
 }
 
+resource "aws_s3_bucket_ownership_controls" "vault_license_bucket_own_ctrl" {
+  bucket = aws_s3_bucket.vault_license_bucket.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_acl" "example" {
+  depends_on = [aws_s3_bucket_ownership_controls.vault_license_bucket_own_ctrl]
+
+  bucket = aws_s3_bucket.vault_license_bucket.id
+  acl    = "private"
+}
+
 resource "aws_s3_bucket_public_access_block" "vault_license_bucket" {
   bucket = aws_s3_bucket.vault_license_bucket.id
 
