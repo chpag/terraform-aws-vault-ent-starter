@@ -26,10 +26,10 @@ variable "resource_name_prefix" {
   description = "Absolute filepath to location of Vault license file"
 }*/
 
-/*variable "vault_license_content" {
+variable "vault_license_content" {
   type        = string
   description = "Content of Vault license file"
-}*/
+}
 
 variable "vault_license_name" {
   type        = string
