@@ -56,7 +56,7 @@ module "object_storage" {
   common_tags            = var.common_tags
   kms_key_arn            = module.kms.kms_key_arn
   resource_name_prefix   = var.resource_name_prefix
-  vault_license_filepath = var.vault_license_filepath
+  vault_license_content = var.vault_license_content
   vault_license_name     = var.vault_license_name
 }
 
