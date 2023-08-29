@@ -137,9 +137,14 @@ variable "user_supplied_userdata_path" {
   default     = null
 }
 
-variable "vault_license_filepath" {
+/*variable "vault_license_filepath" {
   type        = string
   description = "Absolute filepath to location of Vault license file"
+}*/
+
+variable "vault_license_content" {
+  type        = string
+  description = "Content of Vault license file"
 }
 
 variable "vault_license_name" {
