@@ -54,7 +54,7 @@ resource "aws_s3_bucket_public_access_block" "vault_license_bucket" {
   ignore_public_acls      = true
 }
 
-resource "aws_s3_bucket_object" "vault_license" {
+resource "aws_s3_object" "vault_license" {
   bucket = aws_s3_bucket.vault_license_bucket.id
   key    = var.vault_license_name
   content = var.vault_license_content
