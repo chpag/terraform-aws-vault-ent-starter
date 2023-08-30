@@ -7,7 +7,6 @@
 
 module "vpc" {
   source                 = "terraform-aws-modules/vpc/aws"
-  version                = "3.0.0"
   name                   = "${var.resource_name_prefix}-vault"
   cidr                   = var.vpc_cidr
   azs                    = var.azs
