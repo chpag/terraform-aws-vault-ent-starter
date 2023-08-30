@@ -166,7 +166,7 @@ resource "aws_autoscaling_group" "vault" {
     version = "$Latest"
   }
 
-  tags = concat(
+  tag = concat(
     [
       {
         key                 = "Name"
